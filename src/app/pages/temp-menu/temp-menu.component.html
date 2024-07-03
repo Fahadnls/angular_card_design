@@ -1,0 +1,100 @@
+<div>
+
+    <ul style="margin: 20px;">
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/contact-new']">Contact New</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/faqs']">FAQs</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/forgot-password']">Forgot Password</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/signup']">Signup</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/our-fees']">Our Fees</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/reissue-form']">Reissue Form</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/aboutus']">About Us</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/privacy-policy']">Privacy Policy</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/terms']">Terms</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/policies']">Policies</a>
+        </li>
+        <li>
+            <a class="nav-link active" aria-current="page" [routerLink]="['/checkout']">Checkout</a>
+        </li>
+    </ul>
+<h3>Bootstrap Buttons:</h3>
+    <button type="button" class="btn btn-success" (click)="showSuccess()">Show Toastr</button>
+    <button type="button" (click)="storeValue()" class="btn btn-primary">Store</button>
+    <button type="button" (click)="readValue()" class="btn btn-secondary">Read</button>
+    <button type="button" (click)="removeValue()" class="btn btn-danger">Remove</button>
+    <br />
+    <h3>Angular Material:</h3>
+    <mat-divider></mat-divider>
+    <div style="margin: 10px;">
+        <mat-slide-toggle>Toggle me!</mat-slide-toggle>
+        <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color">
+            <mat-button-toggle value="red">Red</mat-button-toggle>
+            <mat-button-toggle value="green">Green</mat-button-toggle>
+            <mat-button-toggle value="blue">Blue</mat-button-toggle>
+          </mat-button-toggle-group>
+          <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+    </div>
+    
+    <h3>Material Inputs:</h3>
+    
+    <mat-divider></mat-divider>
+
+    <div style="display: flex;">
+    <div style="margin-right: 20px;">
+        <mat-form-field>
+            <mat-label>Input</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </div>
+   
+    <div style="margin-right: 20px;">
+        <mat-form-field>
+            <mat-label>Select</mat-label>
+            <mat-select>
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div style="margin-right: 20px;">
+        <mat-form-field>
+            <mat-label>Textarea</mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+    </div>
+
+</div>
+
+    <mat-divider></mat-divider>
+    <section>
+        <div class="example-label">Material Buttons:</div>
+        <div class="example-button-row">
+          <button mat-flat-button>Basic</button>
+          <button mat-flat-button color="primary">Primary</button>
+          <button mat-flat-button color="accent">Accent</button>
+          <button mat-flat-button color="warn">Warn</button>
+          <button mat-flat-button disabled>Disabled</button>
+          <a mat-flat-button href="https://www.google.com/" target="_blank">Link</a>
+        </div>
+      </section>
+ 
+
+</div>
