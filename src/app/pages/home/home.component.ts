@@ -1,39 +1,101 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
+import { NgFor, NgIf } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, FormsModule, NgIf, NgFor],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  selectFont() {
-    // Implement font selection logic
+  customDesign: any = [
+    {
+      objectType: 'topCard',
+      textValue: '',
+      hAlignment: 'center',
+      vAlignment: '0',
+      color: '#000000',
+      size: '14px',
+      font: '',
+    },
+    {
+      objectType: 'middleCard',
+      textValue: '',
+      hAlignment: 'center',
+      vAlignment: '0',
+      color: '#000000',
+      size: '14px',
+      font: '',
+    },
+    {
+      objectType: 'bottomCard',
+      textValue: '',
+      hAlignment: 'center',
+      vAlignment: '0',
+      color : '#000000',
+      size: '14px',
+      font: '',
+    },
+  ];
+  selectedCard = 0;
+
+  ngOnInit(): void {}
+
+
+  onHorizontalAlignment(
+    block: 'top' | 'middle' | 'bottom',
+    alignment: 'left' | 'center' | 'right'
+  ) {
+
+    this.customDesign[this.selectedCard].hAlignment = alignment;
+  }
+  inputClick(i: any) {
+    console.log(i);
+    
+    this.selectedCard = i;
   }
 
-  selectSize() {
-    // Implement size selection logic
+  SelectColor(data: any) {
+    this.customDesign[this.selectedCard].color = data.target.value;
   }
 
-  selectColor() {
-    // Implement color selection logic
+  selectSize(data: any) {
+    this.customDesign[this.selectedCard].size = data.target.value;
   }
 
-  alignText(alignment: string) {
-    // Implement text alignment logic
-  }
-
-  changeFontSize(change: number) {
-    // Implement font size change logic
-  }
-
-  done() {
-    // Implement done logic
+  selectFont(data: any) {
+    this.customDesign[this.selectedCard].font = data.target.value;
   }
 
   reset() {
-    // Implement reset logic
+    // this.style = 'normal';
+    // this.fontSize = '20px';
+    // this.color = 'black';
+  }
+  getVerticalAlignment(value: any) {
+    switch (value) {
+      case 'top':
+        return -60;
+      case 'middle':
+        return 5;
+      case 'bottom':
+        return 60;
+      default:
+        return 5;
+    }
+  }
+  onVerticalAlignment(
+    block: 'top' | 'middle' | 'bottom',
+    alignment: 'top' | 'middle' | 'bottom'
+  ) {
+    this.customDesign[this.selectedCard].vAlignment = alignment;
+  }
+  textValues(data: any) {
+    console.log(data.target);
+  }
+  onDone() {
+    console.log(this.customDesign);
   }
 }

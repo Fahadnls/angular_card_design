@@ -1,12 +1,60 @@
-.toolbar {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .text-area {
-    border: 1px solid #ccc;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.boxes {
+  background: #e0bd2048;
+}
+
+.forms {
+  width: 100%;
+  height: 100px;
+  border: none;
+  outline: none;
+  background: transparent;
+  // display: none;
+  // transform: translatey(-20px);
+}
+
+.inputBox {
+  display: flex;
+  justify-content: center; /* Centers the textarea horizontally */
+  align-items: center; /* Centers the textarea vertically */
+  height: 220px; /* Adjust the height as needed */
+  padding: 13px; /* Optional: Adds padding inside the input box */
+  box-sizing: border-box;
+}
+
+.custom-textarea {
+  border: none;
+  background: transparent;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  padding: 10px;
+  // height: 100%;
+  text-align: center; /* Centers the text horizontally */
+  white-space: pre-wrap; /* Ensures that the text wraps within the textarea */
+}
+
+.btns {
+  background: #d07cf196;
+  width: 130px;
+}
+
+.btns2 {
+  background: #7f45db;
+  cursor: pointer;
+}
+
+.back:hover {
+  background: #7f45db;
+}
+
+.button {
+  background: lime;
+}
+
+.newButton {
+  background: #ffe985a6;
+  border: 1px solid black;
+}
