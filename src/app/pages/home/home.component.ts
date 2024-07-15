@@ -50,12 +50,10 @@ export class HomeComponent {
     this.customDesign[this.selectedCard].hAlignment = alignment;
   }
   inputClick(i: any) {
-    console.log(i);
     this.selectedCard = i;
   }
-
-  SelectColor(data: any) {
-    this.customDesign[this.selectedCard].color = data.target.value;
+  selectColor(data: any) {
+    this.customDesign[this.selectedCard].color = data;
   }
 
   selectSize(data: any) {
@@ -63,6 +61,7 @@ export class HomeComponent {
   }
 
   selectFont(data: any) {
+    
     this.customDesign[this.selectedCard].font = data.target.value;
   }
 

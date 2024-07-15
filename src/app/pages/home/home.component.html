@@ -6,14 +6,14 @@
         <div class="inputBox w-100 px-2">
           <textarea
             class="w-100 custom-textarea"
-            rows="3"
+            rows="4"
             (click)="inputClick(i)"
             placeholder="Add Text Here"
             [(ngModel)]="customDesign[i].textValue"
             [style.font-size]="customDesign[i].size"
             [style.color]="customDesign[i].color"
             [style.text-align]="this.customDesign[i].hAlignment"
-            [style.font-style]="customDesign[i].font"
+            [style.font-family]="customDesign[i].font"
             [style.transform]="
               'translateY(' +
               getVerticalAlignment(this.customDesign[i].vAlignment) +
@@ -22,27 +22,40 @@
           ></textarea>
         </div>
 
-        <hr class="m-0" />
+            
+        <hr class="m-0" [style.color]="selectedCard == i  ? '#1D2C5A' : '#afafaf'"  />
       </div>
     </div>
-    <div class="col-4 col-lg-3 p-4 text-center border">
-      <select
-        class="form-control btn-outline-primary mx-0 text-center custom-select"
-        (click)="SelectColor($event)"
-      >
-        <option value="black" class="bg-light">Select Color</option>
-        <option value="red" class="bg-light">Red</option>
-        <option value="blue" class="bg-light">Blue</option>
-        <option value="yellow" class="bg-light">Yellow</option>
-        <option value="green" class="bg-light">Green</option>
-      </select>
+    <div class="col-4 col-md-4 col-lg-3 col-sm-2 p-4 text-center border">
+      <div>
+        <div class="color-btn"  style="background-color: blue;" (click)="selectColor('#253258')"></div>
+        <div class="color-btn"  style="background-color: yellow;" (click)="selectColor('#ffff00')"></div>
+        <div class="color-btn"  style="background-color: green;" (click)="selectColor('#008000')"></div>
+        <div class="color-btn"  style="background-color: black;" (click)="selectColor('#000000')"></div>
+        <div class="color-btn"  style="background-color: red;" (click)="selectColor('#ff0000')"></div>
+        <div class="color-btn"  style="background-color: orange;" (click)="selectColor('#ffa500')"></div>
+        <div class="color-btn"  style="background-color: purple;" (click)="selectColor('#800080')"></div>
+        <div class="color-btn"  style="background-color: pink;" (click)="selectColor('#ffc0cb')"></div>
+        <div class="color-btn"  style="background-color: brown;" (click)="selectColor('#a52a2a')"></div>
+        <div class="color-btn"  style="background-color: gray;" (click)="selectColor('#808080')"></div>
+       </div>
       <br />
       <select
         class="form-control btn-outline-primary mx-0 text-center custom-select"
         (click)="selectFont($event)"
       >
         <option class="bg-light">Select Font</option>
-        <option class="bg-light" value="italic">Italic</option>
+        <option class="bg-light" value="'Comic Sans MS', cursive, sans-serif" style="font-family: 'Comic Sans MS', cursive, sans-serif;">Comic Sans MS</option>
+        <option class="bg-light" value="'Times New Roman', serif" style="font-family: 'Times New Roman', serif;">Times New Roman</option>
+        <option class="bg-light" value="'Arial', sans-serif" style="font-family: 'Arial', sans-serif;">Arial</option>
+        <option class="bg-light" value="'Courier New', monospace" style="font-family: 'Courier New', monospace;">Courier New</option>
+        <option class="bg-light" value="'Georgia', serif" style="font-family: 'Georgia', serif;">Georgia</option>
+        <option class="bg-light" value="'Impact', sans-serif" style="font-family: 'Impact', sans-serif;">Impact</option>
+        <option class="bg-light" value="'Lucida Console', monospace" style="font-family: 'Lucida Console', monospace;">Lucida Console</option>
+        <option class="bg-light" value="'Tahoma', sans-serif" style="font-family: 'Tahoma', sans-serif;">Tahoma</option>
+        <option class="bg-light" value="'Trebuchet MS', sans-serif" style="font-family: 'Trebuchet MS', sans-serif;">Trebuchet MS</option>
+        <option class="bg-light" value="'Verdana', sans-serif" style="font-family: 'Verdana', sans-serif;">Verdana</option>
+    
       </select>
 
       <br />
@@ -64,7 +77,7 @@
           <button
           style="width: 250px"
             [style.color]="getLeftHAlignment() ==  true ? '#ffffff'  : null "
-            [style.background]="getLeftHAlignment() ==  true ? '#0000ff'  : null "
+            [style.background]="getLeftHAlignment() ==  true ? '#253258'  : null "
 
             (click)="onHorizontalAlignment('top', 'left')"
             class="btn btn-lignt border"
@@ -74,7 +87,7 @@
           <button
             style="width: 250px"
             [style.color]="getCenterHAlignment() ==  true ? '#ffffff'  : null "
-            [style.background]="getCenterHAlignment() ==  true ? '#0000ff'  : null "
+            [style.background]="getCenterHAlignment() ==  true ? '#253258'  : null "
             (click)="onHorizontalAlignment('top', 'center')"
             class="btn border"
           >
@@ -83,7 +96,7 @@
           <button
             style="width: 250px"
             [style.color]="getRightHAlignment() ==  true ? '#ffffff'  : null "
-            [style.background]="getRightHAlignment() ==  true ? '#0000ff'  : null "
+            [style.background]="getRightHAlignment() ==  true ? '#253258'  : null "
             (click)="onHorizontalAlignment('top', 'right')"
             class="btn btn-lignt border"
           >
@@ -94,7 +107,7 @@
           <button
             style="width: 250px"
             [style.color]="getLeftVAlignment() ==  true ? '#ffffff'  : null "
-            [style.background]="getLeftVAlignment() ==  true ? '#0000ff'  : null "
+            [style.background]="getLeftVAlignment() ==  true ? '#253258'  : null "
             (click)="onVerticalAlignment('top', 'top')"
             class="btn btn-lignt border"
           >
@@ -106,7 +119,7 @@
           <button
             style="width: 250px"
             [style.color]="getCenterVAlignment() ==  true ? '#ffffff'  : null "
-            [style.background]="getCenterVAlignment() ==  true ? '#0000ff'  : null "
+            [style.background]="getCenterVAlignment() ==  true ? '#253258'  : null "
             (click)="onVerticalAlignment('top', 'middle')"
             class="btn border"
           >
@@ -116,7 +129,7 @@
             style="width: 250px"
             
             [style.color]="getRightVAlignment() ==  true ? '#ffffff'  : null "
-            [style.background]="getRightVAlignment() ==  true ? '#0000ff'  : null "
+            [style.background]="getRightVAlignment() ==  true ? '#253258'  : null "
             (click)="onVerticalAlignment('top', 'bottom')"
             class="btn btn-lignt border"
           >
@@ -128,7 +141,7 @@
         </div>
       </div>
      
-          <button class="btn newButton" (click)="reset()">Reset</button>
+          <button class="btn newButton" (click)="reset()">done</button>
     </div>
     <div class="col-lg-2"></div>
   </div>

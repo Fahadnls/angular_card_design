@@ -58,3 +58,21 @@
   background: #ffe985a6;
   border: 1px solid black;
 }
+
+.color-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px;
+  transition: transform 0.2s;
+}
+.color-btn:hover {
+  border-color: #ccc;
+}
+.color-btn.active {
+  transform: scale(1.2);
+  border-color: #000;
+}
