@@ -34,7 +34,7 @@ export class HomeComponent {
       textValue: '',
       hAlignment: 'center',
       vAlignment: '0',
-      color : '#000000',
+      color: '#000000',
       size: '14px',
       font: '',
     },
@@ -43,17 +43,14 @@ export class HomeComponent {
 
   ngOnInit(): void {}
 
-
   onHorizontalAlignment(
     block: 'top' | 'middle' | 'bottom',
     alignment: 'left' | 'center' | 'right'
   ) {
-
     this.customDesign[this.selectedCard].hAlignment = alignment;
   }
   inputClick(i: any) {
     console.log(i);
-    
     this.selectedCard = i;
   }
 
@@ -70,9 +67,9 @@ export class HomeComponent {
   }
 
   reset() {
-    // this.style = 'normal';
-    // this.fontSize = '20px';
-    // this.color = 'black';
+   
+   console.log(this.customDesign);
+   
   }
   getVerticalAlignment(value: any) {
     switch (value) {
@@ -85,6 +82,43 @@ export class HomeComponent {
       default:
         return 5;
     }
+  }
+
+  getLeftHAlignment() {
+    if (this.selectedCard >= 0 && this.selectedCard <= 2) {
+      return this.customDesign[this.selectedCard].hAlignment == 'left';
+    }
+    return false;
+  }
+  getCenterHAlignment() {
+    if (this.selectedCard >= 0 && this.selectedCard <= 2) {
+      return this.customDesign[this.selectedCard].hAlignment == 'center';
+    }
+    return false;
+  }
+  getRightHAlignment() {
+    if (this.selectedCard >= 0 && this.selectedCard <= 2) {
+      return this.customDesign[this.selectedCard].hAlignment == 'right';
+    }
+    return false;
+  }
+  getLeftVAlignment() {
+    if (this.selectedCard >= 0 && this.selectedCard <= 2) {
+      return this.customDesign[this.selectedCard].vAlignment == 'top';
+    }
+    return false;
+  }
+  getCenterVAlignment() {
+    if (this.selectedCard >= 0 && this.selectedCard <= 2) {
+      return this.customDesign[this.selectedCard].vAlignment == 'middle';
+    }
+    return false;
+  }
+  getRightVAlignment() {
+    if (this.selectedCard >= 0 && this.selectedCard <= 2) {
+      return this.customDesign[this.selectedCard].vAlignment == 'bottom';
+    }
+    return false;
   }
   onVerticalAlignment(
     block: 'top' | 'middle' | 'bottom',

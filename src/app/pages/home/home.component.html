@@ -59,13 +59,13 @@
         <option class="bg-light" value="24px">24px</option>
         <option class="bg-light" value="26px">26px</option>
       </select>
-
-      <!-- buttons for first input -->
       <div class="row text-center m-3">
         <div class="btn-group mb-4" role="group" aria-label="Basic example">
-          <!-- [style.color]="customDesign[i].color" -->
           <button
-            style="width: 250px"
+          style="width: 250px"
+            [style.color]="getLeftHAlignment() ==  true ? '#ffffff'  : null "
+            [style.background]="getLeftHAlignment() ==  true ? '#0000ff'  : null "
+
             (click)="onHorizontalAlignment('top', 'left')"
             class="btn btn-lignt border"
           >
@@ -73,6 +73,8 @@
           </button>
           <button
             style="width: 250px"
+            [style.color]="getCenterHAlignment() ==  true ? '#ffffff'  : null "
+            [style.background]="getCenterHAlignment() ==  true ? '#0000ff'  : null "
             (click)="onHorizontalAlignment('top', 'center')"
             class="btn border"
           >
@@ -80,6 +82,8 @@
           </button>
           <button
             style="width: 250px"
+            [style.color]="getRightHAlignment() ==  true ? '#ffffff'  : null "
+            [style.background]="getRightHAlignment() ==  true ? '#0000ff'  : null "
             (click)="onHorizontalAlignment('top', 'right')"
             class="btn btn-lignt border"
           >
@@ -89,6 +93,8 @@
         <div class="btn-group" role="group" aria-label="Basic example">
           <button
             style="width: 250px"
+            [style.color]="getLeftVAlignment() ==  true ? '#ffffff'  : null "
+            [style.background]="getLeftVAlignment() ==  true ? '#0000ff'  : null "
             (click)="onVerticalAlignment('top', 'top')"
             class="btn btn-lignt border"
           >
@@ -99,6 +105,8 @@
           </button>
           <button
             style="width: 250px"
+            [style.color]="getCenterVAlignment() ==  true ? '#ffffff'  : null "
+            [style.background]="getCenterVAlignment() ==  true ? '#0000ff'  : null "
             (click)="onVerticalAlignment('top', 'middle')"
             class="btn border"
           >
@@ -106,6 +114,9 @@
           </button>
           <button
             style="width: 250px"
+            
+            [style.color]="getRightVAlignment() ==  true ? '#ffffff'  : null "
+            [style.background]="getRightVAlignment() ==  true ? '#0000ff'  : null "
             (click)="onVerticalAlignment('top', 'bottom')"
             class="btn btn-lignt border"
           >
@@ -116,9 +127,8 @@
           </button>
         </div>
       </div>
-      <!-- <button class="btn button mb-4 text-light" (click)="onDone()">Done</button>
-          <br>
-          <button class="btn newButton" (click)="reset()">Reset</button> -->
+     
+          <button class="btn newButton" (click)="reset()">Reset</button>
     </div>
     <div class="col-lg-2"></div>
   </div>
